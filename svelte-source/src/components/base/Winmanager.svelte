@@ -209,7 +209,7 @@
     margin-bottom: 10px;
     box-shadow: 0px 0px 5px rgba(0, 0, 0, 0.1);
     font-family: "Noto Sans", sans-serif;
-    right: 0;
+    right: -30vh;
     bottom: 4vh;
     transition: all 0.5s ease-in-out;
   }
