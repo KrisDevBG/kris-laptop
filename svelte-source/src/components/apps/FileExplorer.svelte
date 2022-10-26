@@ -1,6 +1,8 @@
 <script lang="ts">
     import Apps from "@components/shared/Apps.svelte";
     import { fetchNui } from "@utils/eventHandler";
+    import Fa from 'svelte-fa'
+    import { faUser } from '@fortawesome/free-solid-svg-icons'
     let topData = {
       title: "File Explorer",
       background: "#1c1b22",
@@ -8,6 +10,19 @@
       blurstrength: 15,
       color: "#1b1b1b",
     };
+
+    function TogglePassword() {
+        let element = document.getElementById("password");
+        if (element.type == "password") {
+            element.type = "text";
+            document.getElementById("eye-pass").classList.remove("fa-eye");
+            document.getElementById("eye-pass").classList.add("fa-eye-slash");
+        } else {
+            element.type = "password";
+            document.getElementById("eye-pass").classList.remove("fa-eye-slash");
+            document.getElementById("eye-pass").classList.add("fa-eye");
+        }
+    }
 </script>
 
 <Apps topdata={topData} appname="fileexplorer">
@@ -17,14 +32,17 @@
             <div class = "admin-required">Administrator permission required. <br>Please log in using an admin account.</div>
             <div class = "login-container">
                 <div class = "username">
+                    <i class="fas fa-user" style = "position: absolute; margin-left: 12%; margin-top: 7.5%; font-size: 20px;"></i>
                     <label for="username">Username</label>
                     <input type="text" id="username" name="username">
                 </div>
                 <div class = "password">
+                    <i class="fas fa-lock" style = "position: absolute; margin-left: 12%; margin-top: 7.5%; font-size: 20px;"></i>
                     <label for="password">Password</label>
-                    <input type="text" id="password" name="password">
-                    <i class="fa-solid fa-user"></i>
+                    <input type="password" id="password" name="password">
+                    <i id = "eye-pass" class="fa-solid fa-eye" on:click={() => TogglePassword()} style = "position: absolute; margin-left: -7%; margin-top: 3%; font-size: 20px;"></i>
                 </div>
+                <div class="separator">OR</div>
             </div>
         </div>
     </div>
@@ -55,7 +73,7 @@
     margin-left: 10%;
     text-align: center;
   }
-  input[type=text] {
+  input[type=text], input[type=password] {
     width: 80%;
     padding: 12px 40px; 
     margin-left: 10%;
@@ -69,17 +87,32 @@
     position: relative;
     margin-top: 2vh;
   }
-  .username i {
-    position: absolute;
-    left: 15px;
-    top: 40px;
-    color: gray;
+  .password {
+    position: relative;
+    margin-top: 2vh;
   }
-  .password i {
-    position: absolute;
-    left: 10%;
-    top: 37%;
-    color: gray;
+  .separator {
+    margin-top: 2vh;
+    display: flex;
+    align-items: center;
+    text-align: center;
+    width: 90%;
+    margin-left: 5%;
+  }
+
+  .separator::before,
+  .separator::after {
+    content: '';
+    flex: 1;
+    border-bottom: 1px solid #fff;
+  }
+
+  .separator:not(:empty)::before {
+    margin-right: .25em;
+  }
+
+  .separator:not(:empty)::after {
+    margin-left: .25em;
   }
   * {
     font-family: "Noto Sans", sans-serif;
