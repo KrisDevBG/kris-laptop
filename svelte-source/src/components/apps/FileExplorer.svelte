@@ -32,17 +32,27 @@
             <div class = "admin-required">Administrator permission required. <br>Please log in using an admin account.</div>
             <div class = "login-container">
                 <div class = "username">
-                    <i class="fas fa-user" style = "position: absolute; margin-left: 12%; margin-top: 7.5%; font-size: 20px;"></i>
-                    <label for="username">Username</label>
-                    <input type="text" id="username" name="username">
+                    <i class="fas fa-user" style = "position: absolute; margin-left: 12%; margin-top: 3%; font-size: 20px;"></i>
+                    <!-- <label for="username">Username</label> -->
+                    <input type="text" id="username" name="username" placeholder="Username">
                 </div>
                 <div class = "password">
-                    <i class="fas fa-lock" style = "position: absolute; margin-left: 12%; margin-top: 7.5%; font-size: 20px;"></i>
-                    <label for="password">Password</label>
-                    <input type="password" id="password" name="password">
+                    <i class="fas fa-lock" style = "position: absolute; margin-left: 12%; margin-top: 3%; font-size: 20px;"></i>
+                    <!-- <label for="password">Password</label> -->
+                    <input type="password" id="password" name="password" placeholder="Password">
                     <i id = "eye-pass" class="fa-solid fa-eye" on:click={() => TogglePassword()} style = "position: absolute; margin-left: -7%; margin-top: 3%; font-size: 20px;"></i>
                 </div>
+                <input type="checkbox" id="remember" name="remember">
+                <label for="remember">Remember me</label>
+                <div class = "login-button">SIGN IN</div>
                 <div class="separator">OR</div>
+                <div class = "other-options">
+                    <div class = "button"><i class="fa-solid fa-mobile"></i><br>Phone</div>
+                    <div class = "button"><i class="fa-solid fa-wifi"></i><br>Wi-Fi</div>
+                    <div class = "button"><i class="fa-solid fa-bag-shopping"></i><br>Item</div>
+                </div>
+                <div class="separator">CAN'T SIGN IN?</div>
+                <p style = "width: 80%; margin-left: 10%; margin-top: 2vh; text-align: center;">Well there is a little problem. We can't help you. Maybe try with a new account?</p>
             </div>
         </div>
     </div>
@@ -52,6 +62,32 @@
   .apps {
     overflow: hidden;
     height: 100%;
+  }
+  .login-button {
+    margin-top: 2vh;
+    width: 80%;
+    margin-left: 10%;
+    height: 5vh;
+    background-color: rgba(50, 56, 77, 0.527);
+    text-align: center;
+    font-size: 20px;
+    padding-top: 2%;
+    font-variant: small-caps;
+  }
+  .button {
+    margin-top: 2vh;
+    margin-left: 2vh;
+    width: 10.7vh;
+    height: 7vh;
+    text-align: center;
+    font-size: 20px;
+    float: left;
+  }
+  .other-options {
+    width: fit-content;
+    max-width: 80%;
+    margin-left: 10%;
+    height: 5vh;
   }
   .admin-required {
     font-size: 20px;
@@ -69,10 +105,6 @@
     height: 50vh;
     border: 1px solid gray;
   }
-  label {
-    margin-left: 10%;
-    text-align: center;
-  }
   input[type=text], input[type=password] {
     width: 80%;
     padding: 12px 40px; 
@@ -82,6 +114,10 @@
     border: none;
     outline: none;
     font-size: 20px;
+  }
+  input[type=checkbox] {
+    margin-left: 10%;
+    margin-top: 2vh;
   }
   .username {
     position: relative;
