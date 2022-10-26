@@ -1,4 +1,4 @@
-# jl-laptop
+# kris-laptop -- REMAKE OF jl-laptop. Documentation of the original script and a link to the creator you can find below.
 
 A laptop script for qbcore.
 
@@ -14,10 +14,11 @@ It comes with 4 default apps
 
 You can create app for specific job, gang, or even only when player have an item!
 
-| Join my discord server [here](https://discord.gg/fqUjRyhW2z) |
+| Join my discord server [here](https://discord.gg/nJkx8Kjygt) |
 | ------------------------------------------------------------ |
 
 ## Read the documentation [here](https://justlazzy.gitbook.io/home/free-resources/jl-laptop)
+## JL's Discord Server [here](https://discord.gg/nJkx8Kjygt)
 
 [![CC BY-NC-SA 4.0][cc-by-nc-sa-shield]][cc-by-nc-sa]
 
