@@ -44,12 +44,12 @@
                 </div>
                 <input type="checkbox" id="remember" name="remember">
                 <label for="remember">Remember me</label>
-                <div class = "login-button">SIGN IN</div>
+                <div class = "login-button" style="cursor: pointer;">SIGN IN</div>
                 <div class="separator">OR</div>
                 <div class = "other-options">
-                    <div class = "button"><i class="fa-solid fa-mobile"></i><br>Phone</div>
-                    <div class = "button"><i class="fa-solid fa-wifi"></i><br>Wi-Fi</div>
-                    <div class = "button"><i class="fa-solid fa-bag-shopping"></i><br>Item</div>
+                    <div class = "button"style="cursor: pointer;"><i class="fa-solid fa-mobile"></i><br>Phone</div>
+                    <div class = "button"style="cursor: pointer;"><i class="fa-solid fa-wifi"></i><br>Wi-Fi</div>
+                    <div class = "button"style="cursor: pointer;"><i class="fa-solid fa-bag-shopping"></i><br>Item</div>
                 </div>
                 <div class="separator">CAN'T SIGN IN?</div>
                 <p style = "width: 80%; margin-left: 10%; margin-top: 2vh; text-align: center;">Well there is a little problem. We can't help you. Maybe try with a new account?</p>
@@ -82,6 +82,11 @@
     text-align: center;
     font-size: 20px;
     float: left;
+    transition: 0.2s;
+  }
+  .button:hover {
+    transition: 0.2s;
+    transform: scale(1.1);
   }
   .other-options {
     width: fit-content;
@@ -132,8 +137,8 @@
     display: flex;
     align-items: center;
     text-align: center;
-    width: 90%;
-    margin-left: 5%;
+    width: 80%;
+    margin-left: 10%;
   }
 
   .separator::before,

@@ -3,6 +3,7 @@
   import Icons from "./Icons.svelte";
   import Notification from "./Notification.svelte";
   import ShittyRightSide from "./RightSide.svelte";
+  import ShittyWifiMenu from "./WifiMenu.svelte";
   import Winmanager from "./Winmanager.svelte";
   import { apps, openApp, openedApps, setApp } from "../../store/desktop";
   import { setSettings, settings } from "../../store/settings";
@@ -57,6 +58,11 @@
     showRightside = !showRightside;
   };
 
+  let showWifiMenu = false;
+  let toggleWifiMenu = () => {
+    showWifiMenu = !showWifiMenu;
+  };
+
   let toggleSetting = (st) => {
     if (st.detail === true) {
       handleOpenApp("setting");
@@ -106,6 +112,7 @@
   <Winmanager
     on:IClick={IClick}
     on:toggleRightside={toggleRightside}
+    on:toggleWifiMenu={toggleWifiMenu}
     on:showingSetting={toggleSetting}
   />
 </div>
