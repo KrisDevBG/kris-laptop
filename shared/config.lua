@@ -62,5 +62,18 @@ Config.Apps = {
         gang = {},
         item = {},
         default = false
+    },
+    ['fileexplorer'] = {
+        app = 'fileexplorer',
+        name = "File Explorer",
+        icon = "fa-folder-open",
+        useimage = false,
+        color = '#fff',
+        background = "black",
+        bannedJobs = { "police" },
+        job = {},
+        gang = {},
+        item = {},
+        default = false
     }
 }

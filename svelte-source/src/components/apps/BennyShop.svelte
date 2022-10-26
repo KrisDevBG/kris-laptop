@@ -25,13 +25,13 @@
     blurstrength: 15,
     color: "#1b1b1b",
   };
-  let categories = ["Cosmetic Parts", "Performance Parts", "Consumable Parts"];
-  let currentPage = "Cosmetic Parts";
+  let categories = ["Външен Тунинг", "Вътрешен Тунинг", "Други"];
+  let currentPage = "Външен Тунинг";
 
   function handleAddCart(e) {
     if ($cart.filter((item) => item.name === e.detail.name).length === 0) {
       cart.update((c) => [...c, e.detail]);
-      notifications.send("Added item to cart", "bennys");
+      notifications.send("Продуктът беше добавен в количката.", "bennys");
     } else {
       cart.update((c) => {
         c.filter((item) => item.name === e.detail.name)[0].quantity += 1;
@@ -88,7 +88,7 @@
         {/each}
       </div>
       <div class="right">
-        {#if $cart.length > 0 && currentPage == "Cart"}
+        {#if $cart.length > 0 && currentPage == "Количка"}
           <div
             class="btn"
             in:fly|local={{ y: -100, easing: cubicOut, duration: 500 }}
@@ -96,14 +96,14 @@
           >
             <button style="width: 120px;" on:click={handleCheckout}>
               <ion-icon name="bag-check" />
-              Checkout</button
+              Поръчай</button
             >
           </div>
         {/if}
 
         <button
           on:click={() => {
-            currentPage = "Cart";
+            currentPage = "Количка";
           }}
         >
           <ion-icon name="cart" style="font-size: 20px;" />
@@ -121,7 +121,7 @@
       </div>
     </div>
     <div class="pages">
-      {#if currentPage !== "Cart"}
+      {#if currentPage !== "Количка"}
         <div class="main-page">
           {#each $items as data (data.name)}
             <div class="card" class:hide={data.category !== currentPage}>
@@ -162,7 +162,7 @@
               </div>
             {:else}
               <div class="empty" transition:fade|local={{ duration: 300 }}>
-                <span>Cart is empty</span>
+                <span>"Количка"та е празна</span>
               </div>
             {/each}
           </div>

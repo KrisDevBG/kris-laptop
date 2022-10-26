@@ -108,7 +108,7 @@
   </div>
   <div class="right-icons">
     {playerGne}<i class="fa-solid fa-wallet"></i>
-    <i class="fa-solid fa-user-shield" />
+    <i class="fa-solid fa-user" />
     <i class="fas fa-solid fa-wifi" />
     <div class="times">
       <span id="time">{time.times ? time.times : "..."}</span>

@@ -23,11 +23,11 @@
   <div class="image" style="background-image: url({image});" />
   <div class="product-title">{title}</div>
   <div class="description">
-    <span>Stock: <span style="color: green;">{stock}</span></span>
-    <span>Price: {price}</span>
+    <span>Наличност: <span style="color: green;">{stock}</span></span>
+    <span>Цена: {price}</span>
   </div>
   <div class="buy">
-    <button on:click={handleAddCart}> Add to cart </button>
+    <button on:click={handleAddCart}> Купи </button>
   </div>
 </div>
 

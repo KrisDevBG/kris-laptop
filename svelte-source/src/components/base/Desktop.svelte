@@ -17,6 +17,7 @@
   import BennyShop from "@apps/BennyShop.svelte";
   import Management from "@apps/Management.svelte";
   import DarkWeb from "@apps/DarkWeb.svelte";
+  import FileExplorer from "@apps/FileExplorer.svelte";
 
   // Register your app component here
   let registeredApp: any = {
@@ -25,6 +26,7 @@
     bennys: BennyShop,
     boss: Management,
     darkweb: DarkWeb,
+    fileexplorer: FileExplorer,
   };
 
   let getComponent = (app: string) => {

@@ -8,7 +8,7 @@
   import Apps from "@shared/Apps.svelte";
   import { onMount } from "svelte";
   let topdata = {
-    title: "10.5.51.20/??/?id=9923",
+    title: "93.123.51.20/??/?id=9923",
     background: "black",
     blur: true,
     blurstrength: 15,

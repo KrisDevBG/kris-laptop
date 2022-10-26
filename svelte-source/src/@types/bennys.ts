@@ -7,7 +7,7 @@ export interface Items {
 }
 
 export interface BennysItem extends Items {
-  category: "Cosmetic Parts" | "Performance Parts" | "Consumable Parts";
+  category: "Външен Тунинг" | "Вътрешен Тунинг" | "Други";
 }
 
 export interface DarkWebItems extends Items {

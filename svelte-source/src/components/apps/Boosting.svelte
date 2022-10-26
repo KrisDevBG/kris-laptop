@@ -27,7 +27,7 @@
 
   let currentPage = "My Contracts";
   let topdata = {
-    title: "Car Boosting",
+    title: "Boosting",
     color: "#1c1b20",
     background: "rgb(22, 20, 31)",
     blur: false,
@@ -194,7 +194,7 @@
             class:active={currentPage === "My Contracts"}
             on:click={() => {
               currentPage = "My Contracts";
-            }}>My Contracts</button
+            }}>Моите Договори</button
           >
         </div>
         <div class="right">
@@ -205,9 +205,9 @@
             class:active={$queue}
           >
             {#if iswaiting}
-              Please Wait
+              Моля изчкайте
             {:else}
-              {$queue ? "Leave Queue" : "Join Queue"}
+              {$queue ? "Излез от опашката" : "Влез в опашката"}
             {/if}
           </button>
         </div>
@@ -246,12 +246,12 @@
               {Truncate($startedContracts.carName)}
             </div>
             <div class="plate">
-              Plate: <b style="color: gold;"
+              Рег. номер: <b style="color: gold;"
                 >{$startedContracts.plate ?? "Ask JL"}</b
               >
             </div>
             <div class="expires">
-              Expires: <b
+              Свършва след: <b
                 >{moment($startedContracts.expire)
                   .endOf("hour")
                   .from(currentDate)}</b
@@ -260,7 +260,7 @@
 
             <div class="button started">
               <button on:click={() => CancelContract($startedContracts.id)}
-                >Cancel Contract</button
+                >Отхвърли договор</button
               >
             </div>
           </div>
@@ -287,33 +287,33 @@
             </div>
             <div class="boost-name">{contract.owner}</div>
             <div class="boost-car">{Truncate(contract.carName)}</div>
-            <div class="boost-reward">Buy In: <b>{contract.cost} GNE</b></div>
+            <div class="boost-reward">Цена: <b>{contract.cost} GNE</b></div>
             <div class="expires">
-              Expires: <b
+              Свършва след: <b
                 >{moment(contract.expire).endOf("hour").from(currentDate)}</b
               >
             </div>
             <div class="button">
               <button
                 on:click={() => [startContract(contract.id)]}
-                disabled={$startedContracts !== null}>Start Contract</button
+                disabled={$startedContracts !== null}>Започни договор</button
               >
               <button
                 on:click={() => [TransferShit(contract.id)]}
-                disabled={$startedContracts !== null}>Transfer Contract</button
+                disabled={$startedContracts !== null}>Прехвърли договор</button
               >
               <button
                 disabled={$startedContracts !== null}
                 on:click={() => {
                   handleRemove(contract.id);
-                }}>Decline Contract</button
+                }}>Отхвърли договор</button
               >
             </div>
           </div>
         {/each}
         {#if $contracts.length === 0 && !$startedContracts}
           <div class="no-contract">
-            <div class="title">You have no contracts</div>
+            <div class="title">Нямате договори</div>
           </div>
         {/if}
       {/if}
