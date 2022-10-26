@@ -105,7 +105,7 @@
             </div>
           </div>
         </div>
-      {:else if currentPage === "About"}
+      <!-- {:else if currentPage === "About"}
         <div
           class="main-page about"
           in:fly|local={{ y: 400, easing: cubicOut, duration: 500 }}
@@ -179,7 +179,7 @@
               <div class="name">Hyper / itsHyper</div>
             </div>
           </div>
-        </div>
+        </div> -->
       {/if}
     </div>
   </div>

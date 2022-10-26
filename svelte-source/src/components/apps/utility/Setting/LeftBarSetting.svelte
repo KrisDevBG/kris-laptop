@@ -18,7 +18,7 @@
         <span>Personalise</span>
       </div>
     </div>
-    <div
+    <!-- <div
       class="item"
       class:active={page === "About"}
       on:click={() => {
@@ -31,7 +31,7 @@
       <div class="text">
         <span>About</span>
       </div>
-    </div>
+    </div> -->
   </div>
 </div>
 
