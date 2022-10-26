@@ -17,7 +17,7 @@ You can create app for specific job, gang, or even only when player have an item
 | Join my discord server [here](https://discord.gg/nJkx8Kjygt) |
 | ------------------------------------------------------------ |
 
-| Join my JL's discord server [here](https://discord.gg/fqUjRyhW2z) |
+| Join JL's discord server [here](https://discord.gg/fqUjRyhW2z) |
 | ------------------------------------------------------------ |
 
 ## Read the documentation [here](https://justlazzy.gitbook.io/home/free-resources/jl-laptop)
