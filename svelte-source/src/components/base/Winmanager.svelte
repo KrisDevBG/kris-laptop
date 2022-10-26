@@ -61,11 +61,24 @@
       input.style.backgroundColor = "rgba(75, 77, 91, 0.508)";
       element.appendChild(input);
       document.getElementById("network-shit").focus();
+      var button = document.createElement("button");
+      button.style.height = "3vh";
+      button.style.marginTop = "2vh";
+      button.style.fontSize = "15px";
+      button.style.outline = "none";
+      button.style.border = "none";
+      button.innerHTML = "CONNECT";
+      button.style.backgroundColor = "rgba(75, 77, 91, 0.508)";
+      button.style.width = "80%";
+      button.style.cursor = "pointer";
+      button.setAttribute("id", "network-shit-button");
+      element.appendChild(button);
     } else {
       shownNetwork = false;
       let element = document.getElementById(`option-${network[0]}`);
       element.style.backgroundColor = "";
-      element.removeChild(document.getElementById(`network-shit`))
+      element.removeChild(document.getElementById(`network-shit`));
+      element.removeChild(document.getElementById(`network-shit-button`))
       element.style.height = "auto";
     }
   }
@@ -211,7 +224,7 @@
     font-family: "Noto Sans", sans-serif;
     right: -30vh;
     bottom: 4vh;
-    transition: all 0.5s ease-in-out;
+    transition: all 0.3s ease-in-out;
   }
   .open-icon {
     width: 35px;
