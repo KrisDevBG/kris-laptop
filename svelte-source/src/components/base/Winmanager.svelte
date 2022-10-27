@@ -17,6 +17,7 @@
   };
   let showRightside = false;
   let showWifiMenu = false;
+  let plyName = "Miller_Lucas";
   let playerGne = 0;
   let wifiNetworks = [["Tashaci", 112233]];
   let currentNetwork = "Bulgar State";
@@ -113,6 +114,9 @@
     if (event.data.action === "playercrypto") {
       playerGne = event.data.crypto;
     }
+    if (event.data.action === "playername") {
+      plyName = event.data.name;
+    }
   }
 
   function IClick(appname: string) {
@@ -184,7 +188,7 @@
   </div>
   <div class="right-icons">
     {playerGne}<i class="fa-solid fa-wallet"></i>
-    <i class="fa-solid fa-user" />
+    <i class="fa-solid fa-user"><span class="tooltiptext">{plyName}</span></i>
     <i class="fas fa-solid fa-wifi" style="cursor: pointer;" on:click={toggleWifiMenu}/>
     <div class="times">
       <span id="time">{time.times ? time.times : "..."}</span>
@@ -211,6 +215,42 @@
     text-align: center;
     cursor: pointer;
     background-color: transparent;
+  }
+  .fa-user {
+    position: relative;
+    display: inline-block;
+    border-bottom: 1px dotted black;
+  }
+
+  .fa-user .tooltiptext {
+    visibility: hidden;
+    width: 120px;
+    background-color: rgba(75, 77, 91, 1);
+    color: #fff;
+    text-align: center;
+    border-radius: 6px;
+    padding: 5px 0;
+    position: absolute;
+    z-index: 1;
+    top: -5px;
+    left: 110%;
+    margin-left: 1vh;
+    font-size: 15px;
+    font-variant: small-caps;
+  }
+
+  .fa-user .tooltiptext::after {
+    content: "";
+    position: absolute;
+    top: 50%;
+    right: 100%;
+    margin-top: -5px;
+    border-width: 5px;
+    border-style: solid;
+    border-color: transparent rgba(75, 77, 91, 1) transparent transparent;
+  }
+  .fa-user:hover .tooltiptext {
+    visibility: visible;
   }
   .wifi-menu {
     position: absolute;

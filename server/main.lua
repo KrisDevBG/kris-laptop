@@ -13,6 +13,11 @@ QBCore.Functions.CreateCallback("jl-laptop:server:getPlyCrypto", function (sourc
     cb(Player.PlayerData.money.crypto)
 end)
 
+QBCore.Functions.CreateCallback("jl-laptop:server:getPlyName", function (source, cb)
+    local Player = QBCore.Functions.GetPlayer(source)
+    cb(Player.PlayerData.charinfo.lastname .. "_" .. Player.PlayerData.charinfo.firstname)
+end)
+
 local function haveItem(items, item)
     if not items or not item then return false end
 

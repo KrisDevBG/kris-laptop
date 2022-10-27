@@ -3,6 +3,7 @@ local onDuty = false
 local apps = {}
 local fullyLoaded = false
 local PlyCrypto = 0
+local PlyName
 
 
 
@@ -161,10 +162,16 @@ local function SetDisplay(bool)
         status = bool,
     })
     GetPlayerCrypto()
-    Wait(200)
+    Wait(100)
     SendNUIMessage({
         action = "playercrypto",
         crypto = PlyCrypto
+    })
+    GetPlayerName()
+    Wait(100)
+    SendNUIMessage({
+        action = "playername",
+        name = PlyName
     })
     Animation()
 end
@@ -172,6 +179,12 @@ end
 function GetPlayerCrypto()
     QBCore.Functions.TriggerCallback("jl-laptop:server:getPlyCrypto", function (crypto)
         PlyCrypto = crypto
+    end)
+end
+
+function GetPlayerName()
+    QBCore.Functions.TriggerCallback("jl-laptop:server:getPlyName", function (name)
+        PlyName = name
     end)
 end
 
