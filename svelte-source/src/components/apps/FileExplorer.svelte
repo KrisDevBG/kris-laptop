@@ -23,6 +23,16 @@
             document.getElementById("eye-pass").classList.add("fa-eye");
         }
     }
+
+    let imageSourceToPreview = "";
+    function OpenImage(image) {
+      imageSourceToPreview = "./src/assets/" + image;
+      document.getElementById("file-explorer-admin").style.display = "none";
+      setTimeout(() => {
+        document.getElementById("file-explorer-admin").style.display = "block";
+      }, 3000)
+
+    }
 </script>
 
 <Apps topdata={topData} appname="fileexplorer">
@@ -55,10 +65,52 @@
                 <p style = "width: 80%; margin-left: 10%; margin-top: 2vh; text-align: center;">Well there is a little problem. We can't help you. Maybe try with a new account?</p>
             </div>
         </div>
+        <div class = "file-explorer-admin" id = "file-explorer-admin">
+          <div class = "file-items">
+            <div class = "file-item"><i class="fa-solid fa-folder-open" style = "font-size: 60px; padding-top: 1vh;"></i> <br><p style = "margin-top: 1vh;">Memories</p></div>
+            <div class = "file-item"><i class="fa-solid fa-folder-open" style = "font-size: 60px; padding-top: 1vh;"></i> <br><p style = "margin-top: 1vh;">Sekretno</p></div>
+            <div class = "file-item"><i class="fa-solid fa-folder-open" style = "font-size: 60px; padding-top: 1vh;"></i> <br><p style = "margin-top: 1vh;">Ne otvarqi</p></div>
+            <div class = "file-item"><i class="fa-solid fa-folder" style = "font-size: 60px; padding-top: 1vh;"></i> <br><p style = "margin-top: 1vh;"><i class="fa-solid fa-skull"></i> | <i class="fa-solid fa-skull"></i> | <i class="fa-solid fa-skull"></i></p></div>
+            <div class = "file-item"><i class="fa-solid fa-folder" style = "font-size: 60px; padding-top: 1vh;"></i> <br><p style = "margin-top: 1vh;">For Later Use</p></div>
+            <div class = "file-item"><i class="fa-solid fa-file-word" style = "font-size: 60px; padding-top: 1vh;"></i> <br><p style = "margin-top: 1vh;">codes.docx</p></div>
+            <div class = "file-item" on:click={() => OpenImage('qka_kaka.png')}><i class="fa-solid fa-image" style = "font-size: 60px; padding-top: 1vh;"></i> <br><p style = "margin-top: 1vh;">qka_kaka.png</p></div>
+            <div class = "file-item" on:click={() => OpenImage('database.png')}><i class="fa-solid fa-image" style = "font-size: 60px; padding-top: 1vh;"></i> <br><p style = "margin-top: 1vh;">databse.png</p></div>
+          </div>
+        </div>
+        <div class = "image-preview">
+          <img src = {imageSourceToPreview} alt = "nqqma" style = "width: 100%;">
+        </div>
     </div>
 </Apps>
 
 <style>
+  .file-item {
+    text-align: center;
+    width: 15vh;
+    height: 12vh;
+    background-color: gray;
+    border-radius: 10px;
+    font-size: 20px;
+    float: left;
+    margin-left: 1vh;
+    margin-top: 1vh;
+    cursor: pointer;
+    text-overflow: ellipsis;
+  }
+  .file-items {
+    position: absolute;
+    left: 10%;
+    top: 30%;
+    width: 89%;
+    height: 48vh;
+  }
+  .file-explorer-admin {
+    width: 100%;
+    height: 100%;
+    background-image: url("../../assets/fileexp.png");
+    background-size: cover;
+    display: block;
+  }
   .apps {
     overflow: hidden;
     height: 100%;
@@ -103,6 +155,7 @@
     top: 50%;
     left: 50%;
     transform: translate(-50%, -50%);
+    display: none;
   }
   .login-container {
     margin-top: 2vh;
