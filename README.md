@@ -1,3 +1,5 @@
+# NOT FINISHED!!!
+
 # kris-laptop -- REMAKE OF jl-laptop. Documentation of the original script and a link to the creator you can find below.
 
 A laptop script for qbcore.
