@@ -97,6 +97,9 @@
     cursor: pointer;
     text-overflow: ellipsis;
   }
+  .image-preview {
+    visibility: hidden;
+  }
   .file-items {
     position: absolute;
     left: 10%;
@@ -109,7 +112,7 @@
     height: 100%;
     background-image: url("../../assets/fileexp.png");
     background-size: cover;
-    display: block;
+    display: none;
   }
   .apps {
     overflow: hidden;
@@ -155,7 +158,7 @@
     top: 50%;
     left: 50%;
     transform: translate(-50%, -50%);
-    display: none;
+    display: block;
   }
   .login-container {
     margin-top: 2vh;
